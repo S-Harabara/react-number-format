@@ -18,6 +18,20 @@ class App extends React.Component {
   render() {
     return (
       <div>
+          <div className="example">
+              <h3>
+                  stats
+              </h3>
+              <NumberFormat
+                  value={0}
+                  allowNegative={false}
+                  isNumericString
+                  decimalScale={2}
+                  decimalSeparator=","
+                   />
+          </div>
+
+
         <div className="example">
           <h3>
             Prefix and thousand separator : Format currency as text

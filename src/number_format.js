@@ -433,6 +433,8 @@ class NumberFormat extends React.Component {
     const {format, removeFormatting} = this.props;
     if (!val) return val;
 
+    val = val.replace('.',',');
+
     if (!format) {
       val = this.removePrefixAndSuffix(val);
       val = this.getFloatString(val);
@@ -746,6 +748,7 @@ class NumberFormat extends React.Component {
     if (!isAllowed(valueObj)) {
       formattedValue = lastValue;
     }
+
 
     this.updateValue({ formattedValue, numAsString, inputValue, input: el });
 
