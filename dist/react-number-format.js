@@ -760,8 +760,13 @@
       value: function removeFormatting(val) {
         var _this$props5 = this.props,
             format = _this$props5.format,
-            removeFormatting = _this$props5.removeFormatting;
+            removeFormatting = _this$props5.removeFormatting,
+            decimalSeparator = _this$props5.decimalSeparator;
         if (!val) return val;
+
+        if (decimalSeparator === ',') {
+          val = val.replace('.', ',');
+        }
 
         if (!format) {
           val = this.removePrefixAndSuffix(val);

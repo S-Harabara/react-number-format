@@ -430,10 +430,12 @@ class NumberFormat extends React.Component {
   }
 
   removeFormatting(val: string) {
-    const {format, removeFormatting} = this.props;
+    const {format, removeFormatting, decimalSeparator} = this.props;
     if (!val) return val;
 
-    val = val.replace('.',',');
+    if(decimalSeparator === ','){
+      val = val.replace('.',',');
+    }
 
     if (!format) {
       val = this.removePrefixAndSuffix(val);
